@@ -82,45 +82,50 @@
 <body id="body">
   <div id="bodyn">
     <br />
-
-    <div>
-      <div class="card text-center offset-5 col-10" style="width: 18rem" *ngFor="let campeonato of campeonatos$ | async">
-        <div class="card-header">
-          <h5 class="card-title">Campeonato Regional</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="row justify-content-evenly">
-              <div class="col-6">
-                <img src="https://logodownload.org/wp-content/uploads/2017/02/colo-colo-logo-escudo-shield.png" width="50px" height="50px" />
-              </div>
-              <div class="col-6">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Escudo_Club_Deportes_Cobreloa.png" width="50px" height="50px" />
+    <button type="button" class="btn btn-secondary btn-lg" *ngIf="this.userRole === 'admin'">
+      <a href="agregar2" class="nav-link"> Agregar Campeonato</a>
+    </button>
+        <div class="match" style="margin-bottom: 20px;"  *ngFor="let campeonato of campeonatos$ | async">
+          <div class="match-content">
+            <div class="column">
+              <div class="team team--home">
+                <div class="team-logo">
+                  
+                  <img src="{{ campeonato.imagen_equipo }}" />
+                </div>
+                <h2 class="team-name"> {{ campeonato.equipo }}</h2>
               </div>
             </div>
-          </li>
-
-          <li class="list-group-item">
-            <div>
-              <div class="row align-items-start">
-                <div class="col">
-                  {{ campeonato.equipo }}
+            <div class="column">
+              <div class="match-details">
+                <div class="match-date">
+                  {{ campeonato.fecha }}
                 </div>
-                <div class="col">VS</div>
-                <div class="col">
-                  {{ campeonato.equipo_rival }}
+                <div class="match-score">
+                  <span class="match-score-number match-score-number--leading">{{ campeonato.goles }}</span>
+                  <span class="match-score-divider">:</span>
+                  <span class="match-score-number">{{ campeonato.goles_rival }}</span>
                 </div>
+                <div class="match-time-lapsed">
+                  {{ campeonato.ubicacion }}
+                </div>
+              <button class="match-bet-place" *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico'" routerLink="editar/{{ campeonato.id }}">Elegir Resultado</button>
               </div>
             </div>
-          </li>
-          <li class="list-group-item">{{ campeonato.gol }} - {{ campeonato.gol_rival }}</li>
-          <div class="card-footer text-muted">
-            {{ campeonato.fecha.toDate() | date : 'yyyy/MM/dd' }}
-            <br />
-            {{ campeonato.Ubicacion }}
+            <div class="column">
+              <div class="team team--away">
+                <div class="team-logo">
+              
+                  <img src="{{ campeonato.imagen_rival }}" />
+                </div>
+                <h2 class="team-name"> {{ campeonato.equipo_rival }}</h2>
+              </div>
+            </div>
           </div>
-        </ul>
+        </div>
       </div>
-    </div>
-  </div>
 </body>
+
+
+
+

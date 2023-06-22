@@ -22,19 +22,19 @@ export class EquipoComponent {
 
   action(type: string, index: any, data: any) {
     if (type == 'edit') {
-      console.log('Edit');
+
     } else if (type == 'delete') {
-      alert('Are you sure to Delete Data!!!......');
+      
       const docInstance = doc(this.firestore, 'Equipos', index);
       deleteDoc(docInstance)
         .then(() => {
-          console.log('Data Deleted');
+         
         })
         .catch((err) => {
-          console.log(err);
+          
         });
     } else {
-      console.log('Call Wrong Function......');
+    
     }
     this.updateId = index;
   }

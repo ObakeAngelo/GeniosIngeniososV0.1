@@ -25,7 +25,7 @@ export class LoginComponent {
     this.usuariosService
       .login(this.formLogin.value)
       .then(async (response) => {
-        console.log(response);
+        
         const {
           user: {uid},
         } = response;
@@ -40,7 +40,7 @@ export class LoginComponent {
     this.usuariosService
       .loginWithGoogle()
       .then((response) => {
-        console.log(response);
+        
         this.router.navigate(['']);
       })
       .catch((error) => console.log(error));

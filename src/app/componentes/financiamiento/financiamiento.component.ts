@@ -23,18 +23,18 @@ export class FinanciamientoComponent implements OnInit {
   constructor(private servicio: UsuariosService) {
     const collectionInstance = collection(this.firestore, 'Financiamiento');
     collectionData(collectionInstance, {idField: 'id'}).subscribe((response) => {
-      console.log(response);
+     
       this.ingresos = response
         .filter((item) => item['tipo'] === 'Ingreso')
         .map((item) => item['valor'])
         .reduce((acc, current) => acc + current, 0);
-      console.log('Ingresos', this.ingresos);
+      
 
       this.egresos = response
         .filter((item) => item['tipo'] === 'Egreso')
         .map((item) => item['valor'])
         .reduce((acc, current) => acc + current, 0);
-      console.log('Egresos', this.egresos);
+     
       this.RenderChart();
 
       this.total = this.ingresos - this.egresos;

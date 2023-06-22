@@ -44,10 +44,10 @@ export class ModificarJugadorComponent {
       const jugadorDocRef = doc(this.firestore, 'Jugadores/' + this.updateId);
       getDoc(jugadorDocRef).then((doc) => {
         if (doc.exists()) {
-          console.log('Document data:', doc.data());
+          
           this.formulario.setValue(doc.data());
         } else {
-          console.warn('No such document!');
+          
         }
       });
     }
@@ -58,11 +58,10 @@ export class ModificarJugadorComponent {
   }
 
   editData() {
-    console.log(this.formulario.value);
-    console.log(this.updateId);
+    
     const jugadorDocRef = doc(this.firestore, 'Jugadores/' + this.updateId);
     updateDoc(jugadorDocRef, this.formulario.value).then(() => {
-      console.log('Document successfully updated!');
+      
       this.resetForm();
       this.router.navigate(['/jugadores']);
     });

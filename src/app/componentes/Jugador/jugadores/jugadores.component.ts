@@ -23,23 +23,23 @@ export class JugadoresComponent {
 
   action(type: string, index: any, data: any) {
     if (type == 'edit') {
-      console.log('Edit');
+
     } else if (type == 'delete') {
-      console.log(index);
-      alert('PAPITO TE VOY A BORRAR!!!......');
+
+      
       const docInstance = doc(this.firestore, 'Jugadores', index);
       deleteDoc(docInstance)
         .then(() => {
-          console.log('Data Deleted');
+        
         })
         .catch((err) => {
-          console.log(err);
+          
         });
     } else {
-      console.log('Call Wrong Function......');
+   
     }
     this.updateId = index;
-    console.log(index);
+
   }
   logout() {
     this.servicio.logout2();

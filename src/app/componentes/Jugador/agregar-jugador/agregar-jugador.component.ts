@@ -80,13 +80,13 @@ export class AgregarJugadorComponent {
           this.formulario.reset();
         })
         .catch((error) => {
-          console.log('Error ====>', error);
+          
         });
       this.formulario.reset();
       this.submitted = false;
       this.isLoading = false;
     } else {
-      console.log('Formulario Incorrecto.');
+      
     }
   }
   addFinanciamiento() {
@@ -103,10 +103,10 @@ export class AgregarJugadorComponent {
     };
     addDoc(collectionInstance2, datos)
       .then((res) => {
-        console.log('paso');
+        
       })
       .catch((error) => {
-        console.log('Error ====>', error);
+       
       });
   }
   logout() {

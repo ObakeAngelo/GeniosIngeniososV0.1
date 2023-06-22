@@ -41,7 +41,7 @@ export class AgregarEquipoComponent {
   ngOnInit(): void {
     var today = new Date();
     var now = today.toLocaleString();
-    console.log(now);
+
     this.fecha = now;
   }
   async nuevaImagen(event: any) {
@@ -72,14 +72,14 @@ export class AgregarEquipoComponent {
           this.formulario.reset();
         })
         .catch((error) => {
-          console.log('Error ====>', error);
+      
         });
 
       this.formulario.reset();
       this.submitted = false;
       this.isLoading = false;
     } else {
-      console.log('Formulario Incorrecto.');
+    
     }
   }
   addFinanciamiento() {
@@ -96,10 +96,10 @@ export class AgregarEquipoComponent {
     };
     addDoc(collectionInstance2, datos)
       .then((res) => {
-        console.log('paso');
+    
       })
       .catch((error) => {
-        console.log('Error ====>', error);
+      
       });
   }
   logout() {

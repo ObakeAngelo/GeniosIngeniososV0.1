@@ -41,10 +41,10 @@ export class ModificarEquipoComponent {
       const equipoDocRef = doc(this.firestore, 'Equipos/' + this.updateId);
       getDoc(equipoDocRef).then((doc) => {
         if (doc.exists()) {
-          console.log('Document data:', doc.data());
+          
           this.formulario.setValue(doc.data());
         } else {
-          console.warn('No such document!');
+          
         }
       });
     }
@@ -55,11 +55,10 @@ export class ModificarEquipoComponent {
   }
 
   editData() {
-    console.log(this.formulario.value);
-    console.log(this.updateId);
+    
     const jugadorDocRef = doc(this.firestore, 'Equipos/' + this.updateId);
     updateDoc(jugadorDocRef, this.formulario.value).then(() => {
-      console.log('Document successfully updated!');
+      
       this.resetForm();
       this.router.navigate(['/equipo']);
     });

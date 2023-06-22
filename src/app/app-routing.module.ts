@@ -13,7 +13,8 @@ import {AgregarEquipoComponent} from './componentes/Equipo/agregar-equipo/agrega
 import {ModificarEquipoComponent} from './componentes/Equipo/modificar-equipo/modificar-equipo.component';
 import {FinanciamientoComponent} from './componentes/financiamiento/financiamiento.component';
 import {AgregarTraspasosComponent} from './componentes/agregar-traspasos/agregar-traspasos.component';
-
+import { AgregarCampeonatoComponent } from './campeonato/agregar-campeonato/agregar-campeonato.component';
+import { EditarCampeonatoComponent } from './campeonato/editar-campeonato/editar-campeonato.component';
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
@@ -27,14 +28,17 @@ const routes: Routes = [
     component: ModificarJugadorComponent,
   },
   {path: 'campeonatos', component: CampeonatosComponent},
+  {path: 'campeonatos/editar/:id', component: EditarCampeonatoComponent},
   {path: 'traspasos', component: TraspasosComponent},
   {path: 'agregar', component: AgregarJugadorComponent},
+  {path: 'agregar2', component: AgregarCampeonatoComponent},
   {path: 'equipo', component: EquipoComponent},
   {path: 'equipo/editar/:id', component: ModificarEquipoComponent},
 
   {path: 'agregarequipo', component: AgregarEquipoComponent},
   {path: 'financiamiento', component: FinanciamientoComponent},
   {path: 'jugadores/traspasos/:id', component: AgregarTraspasosComponent},
+  
 ];
 
 @NgModule({

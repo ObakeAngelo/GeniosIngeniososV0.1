@@ -18,6 +18,7 @@ export class CampeonatosComponent {
     collectionData(collectionInstance, {idField: 'id'}).subscribe(() => {});
     this.campeonatos$ = collectionData(collectionInstance, {idField: 'id'});
     this.userRole = localStorage.getItem('user_role') || '';
+    console.log(this.campeonatos$)
   }
   logout() {
     this.servicio.logout2();

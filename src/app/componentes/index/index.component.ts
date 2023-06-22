@@ -98,7 +98,7 @@ export class IndexComponent implements OnInit {
       onApprove: (data, actions) => {
         console.log('onApprove - transaction was approved, but not authorized', data, actions);
         actions.order.get().then((details: any) => {
-          console.log('Aprovado', details);
+         
         });
       },
       onClientAuthorization: (data) => {
@@ -123,27 +123,27 @@ export class IndexComponent implements OnInit {
         };
         const usuarioref = doc(this.firestore, 'users/' + this.id);
         updateDoc(usuarioref, datos).then(() => {
-          console.log('Document successfully updated!');
+          
         });
         localStorage.setItem('user_role', 'socio' ?? '');
         window.location.reload();
 
         addDoc(collectionInstance, this.formulario.value)
           .then((res) => {
-            console.log(res);
+            
           })
           .catch((error) => {
-            console.log('Error ====>', error);
+            
           });
       },
       onCancel: (data, actions) => {
-        console.log('OnCancel', data, actions);
+        
       },
       onError: (err) => {
-        console.log('OnError', err);
+        
       },
       onClick: (data, actions) => {
-        console.log('onClick', data, actions);
+        
       },
     };
   }

@@ -24,6 +24,8 @@ import {FinanciamientoComponent} from './componentes/financiamiento/financiamien
 import {AgregarTraspasosComponent} from './componentes/agregar-traspasos/agregar-traspasos.component';
 import {NgxPayPalModule} from 'ngx-paypal';
 import { SeparadorPipe } from './separador.pipe';
+import { AgregarCampeonatoComponent } from './campeonato/agregar-campeonato/agregar-campeonato.component';
+import { EditarCampeonatoComponent } from './campeonato/editar-campeonato/editar-campeonato.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { SeparadorPipe } from './separador.pipe';
     FinanciamientoComponent,
     AgregarTraspasosComponent,
     SeparadorPipe,
+    AgregarCampeonatoComponent,
+    EditarCampeonatoComponent,
   ],
   imports: [
     BrowserModule,

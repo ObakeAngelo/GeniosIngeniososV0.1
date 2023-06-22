@@ -80,11 +80,12 @@
   </div>
 </nav>
 <body id="body">
-  <div id="bodyn">
+  <button type="button" class="btn btn-secondary btn-lg" *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico'" style="margin-left: 5%;">
+    <a href="agregar" class="nav-link"> Agregar Jugador</a>
+  </button>
+  <div id="bodyn" class="row">
     <br />
-    <button type="button" class="btn btn-secondary btn-lg" *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico'">
-      <a href="agregar" class="nav-link"> Agregar Jugador</a>
-    </button>
+
     <div class="card" *ngFor="let jugador of jugadores$ | async" style="margin-top: 1%">
       <div class="card-top-part">
         <div class="left-part">
