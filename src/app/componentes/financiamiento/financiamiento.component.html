@@ -82,17 +82,68 @@
 <body id="body">
   <div id="bodyn">
     <br />
-
-    <div class="row">
-      <div class="col-lg-3">
+      <div class="row">
+      <div class="col-lg-12">
         <div style="text-align: center">
           <h2>Ingreso/Egreso</h2>
           <h3>Total {{ total | currency : 'CLP' : 'symbol' | separador }}</h3>
         </div>
-        <div style="position: relative; height: 45vh; width: 85vw">
+        <div style="position: relative; height: 45vh; width: 85vw; margin-left: 36%;">
           <canvas id="pieChart"></canvas>
         </div>
       </div>
     </div>
+    <div class="row">
+    <div class="col-lg-6">
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th>Procedencia</th>
+            <th>Tipo</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+           <ng-container *ngIf="(engresostotales$ | async) as egresostotales">
+              <tr *ngFor="let egreso of egresostotales">
+                <ng-container *ngIf="egreso.tipo === 'Egreso'">
+                  <td>{{ egreso.procedencia }}</td>
+                  <td>{{ egreso.tipo }}</td>
+                  <td>{{ egreso.fecha }}</td>
+                  <td>{{ egreso.valor | currency : 'CLP' : 'symbol' | separador }}</td>
+                </ng-container>
+              </tr>
+            </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-6">
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th>Correo</th>
+            <th>Procedencia</th>
+            <th>Tipo</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+           <ng-container *ngIf="(ingresostotales$ | async) as ingresostotales">
+              <tr *ngFor="let ingreso of ingresostotales">
+                <ng-container *ngIf="ingreso.tipo === 'Ingreso'">
+                  <td>{{ ingreso.correo }}</td>
+                  <td>{{ ingreso.procedencia }}</td>
+                  <td>{{ ingreso.tipo }}</td>
+                  <td>{{ ingreso.fecha }}</td>
+                  <td>{{ ingreso.valor  | currency : 'CLP' : 'symbol' | separador}}</td>
+                </ng-container>
+              </tr>
+            </ng-container>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
 </body>
