@@ -83,7 +83,7 @@
   <div id="bodyn">
     <br />
 
-    <form [formGroup]="formulario" (ngSubmit)="(addData)">
+    <form [formGroup]="formulario">
       <div class="form-floating">
         <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" id="nombre" />
         <label for="floatingInput1" id="nombre1">Nombre</label>
@@ -110,7 +110,7 @@
       <div class="form-floating">
         <select formControlName="posicion" id="posicion" class="form-select">
           <option>Abre Para eligir posicion de jugador</option>
-          <option value="P">Portero</option>
+          <option value="PO">Portero</option>
           <option value="LI">Lateral Izquierdo</option>
           <option value="LD">Lateral Derecho</option>
           <option value="DFC">Defensa Central</option>

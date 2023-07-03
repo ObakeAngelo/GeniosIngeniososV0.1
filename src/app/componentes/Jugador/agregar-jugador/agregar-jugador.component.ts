@@ -77,10 +77,11 @@ export class AgregarJugadorComponent {
 
       addDoc(collectionInstance, this.formulario.value)
         .then((res) => {
+          console.log(res)
           this.formulario.reset();
         })
         .catch((error) => {
-          
+          console.log(error)
         });
       this.formulario.reset();
       this.submitted = false;

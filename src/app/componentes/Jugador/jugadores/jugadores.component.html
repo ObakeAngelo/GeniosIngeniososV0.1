@@ -111,7 +111,7 @@
           <a routerLink="editar/{{ jugador.id }}">Editar</a>
         </div>
         <div class="bottom-part" *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico'">
-          <a routerLink (click)="action('delete', jugador.id, jugador)">Borrar</a>
+          <a routerLink="jugadores" (click)="action('delete', jugador.id, jugador)">Borrar</a>
         </div>
         <div class="bottom-part" *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico'">
           <a routerLink="traspasos/{{ jugador.id }}">Traspasar</a>
