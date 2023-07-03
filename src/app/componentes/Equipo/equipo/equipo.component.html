@@ -80,12 +80,13 @@
   </div>
 </nav>
 <body id="body">
+  
+  <button type="button" class="btn btn-secondary btn-lg" *ngIf="this.userRole === 'admin'">
+    <a href="agregarequipo" class="nav-link"> Agregar Equipo</a>
+  </button>
   <div id="bodyn" class="row">
     <br />
 
-    <button type="button" class="btn btn-secondary btn-lg" *ngIf="this.userRole === 'admin'">
-      <a href="agregarequipo" class="nav-link"> Agregar Equipo</a>
-    </button>
 
     <div class="card" *ngFor="let equipo of Equipo$ | async">
       <div class="card-top-part">
