@@ -43,7 +43,6 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     var today = new Date();
     var now = today.toLocaleString();
-    console.log(now);
     this.fecha = now;
     this.initConfig();
     this.api(10);
