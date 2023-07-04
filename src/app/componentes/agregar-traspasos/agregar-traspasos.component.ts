@@ -42,13 +42,13 @@ export class AgregarTraspasosComponent {
       
       this.apellido = this.apellido[0];
 
-      this.equipo_entrada = response.filter((item) => item['id'] === this.updateId).map((item) => item['equipo_entrada']);
-     
-      this.equipo_entrada = this.equipo_entrada[0];
-
-      this.equipo_salida = response.filter((item) => item['id'] === this.updateId).map((item) => item['equipo_salida']);
+      this.equipo_salida = response.filter((item) => item['id'] === this.updateId).map((item) => item['equipo_entrada']);
      
       this.equipo_salida = this.equipo_salida[0];
+
+      this.equipo_entrada = response.filter((item) => item['id'] === this.updateId).map((item) => item['equipo_salida']);
+     
+      this.equipo_entrada = this.equipo_entrada[0];
 
       this.valor = response.filter((item) => item['id'] === this.updateId).map((item) => item['valor']);
     
