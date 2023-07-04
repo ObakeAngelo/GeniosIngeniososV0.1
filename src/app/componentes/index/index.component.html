@@ -110,7 +110,7 @@
       <h4 style="text-align: center">Quieres Hacerte Socio?,Unete</h4>
       <div
         style="margin-left: 28%"
-        *ngIf="this.userRole === 'admin' || this.userRole === 'tecnico' || this.userRole === 'socio' || this.userRole === 'usuario'"
+        *ngIf="this.userRole === 'usuario'"
       >
         <ngx-paypal [config]="payPalConfig"></ngx-paypal>
       </div>
