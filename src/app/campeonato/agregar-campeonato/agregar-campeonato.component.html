@@ -93,7 +93,7 @@
         <div class="row">
             <div class="form-floating col-6">
                 <input type="text" class="form-control" formControlName="equipo" placeholder="Equipo" id="Equipo" />
-                <label for="floatingInput2" id="Equipo1">Equipo</label>
+                <label for="floatingInput2" id="Equipo1" style="margin-left: 1%;">Equipo</label>
                 <span *ngIf="this.formulario.get('apellido')?.errors?.['required']"> (El Apellido no puede quedar vacío) </span>
             </div>
             <div class="form-floating col-6">
@@ -104,7 +104,7 @@
         <div class="row">
             <div class="form-floating col-6">
                 <input type="text" class="form-control" formControlName="equipo_rival" placeholder="Rival" id="Rival" />
-                <label for="floatingInput2" id="Rival1">Rival</label>
+                <label for="floatingInput3" id="Rival1" style="margin-left: 1%;">Rival</label>
                 <span *ngIf="this.formulario.get('apellido')?.errors?.['required']"> (El Apellido no puede quedar vacío) </span>
                 </div>
             <br />
@@ -124,13 +124,13 @@
         <br>
         <div class="form-floating">
             <input type="number" class="form-control" formControlName="goles" placeholder="GolesEquipo" id="GolesEquipo" readonly/>
-            <label for="floatingInput4" id="GolesEquipo1">Goles Equipo</label>
+            <label for="floatingInput5" id="GolesEquipo1">Goles Equipo</label>
             <span *ngIf="this.formulario.get('edad')?.errors?.['required']"> (La Edad no puede quedar vacía) </span>
         </div>
         <br>
         <div class="form-floating">
             <input type="number" class="form-control" formControlName="goles_rival" placeholder="Golesrival" id="Golesrival" readonly/>
-            <label for="floatingInput4" id="Golesrival1">Goles rival</label>
+            <label for="floatingInput6" id="Golesrival1">Goles rival</label>
             <span *ngIf="this.formulario.get('edad')?.errors?.['required']"> (La Edad no puede quedar vacía) </span>
         </div>
         <br>

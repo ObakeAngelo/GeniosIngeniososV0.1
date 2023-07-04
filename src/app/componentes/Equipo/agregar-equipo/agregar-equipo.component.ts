@@ -29,7 +29,6 @@ export class AgregarEquipoComponent {
       rut: new FormControl('', [Validators.required, Validators.minLength(2)]),
       correo: new FormControl('', [Validators.required, Validators.minLength(2)]),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      permisos: new FormControl('', [Validators.required, Validators.minLength(2)]),
       sueldo: new FormControl('', [Validators.required, Validators.minLength(2)]),
       valor_hora_extra: new FormControl('', [Validators.required, Validators.minLength(2)]),
       equipo_entrada: new FormControl('', [Validators.required, Validators.minLength(2)]),

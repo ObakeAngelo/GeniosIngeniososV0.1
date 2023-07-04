@@ -115,16 +115,8 @@
       </div>
       <br />
       <div class="form-floating">
-        <label for="inputState" class="form-label">Permisos</label>
-        <select id="inputState" class="form-select" formControlName="permisos">
-          <option selected>Elegir</option>
-          <option value="Equipo Tecnico">Equipo Tecnico</option>
-        </select>
-      </div>
-      <br />
-      <div class="form-floating">
         <input type="number" class="form-control" formControlName="sueldo" placeholder="Asistencias" id="Suedo" />
-        <label for="floatingInput7" id="sueldo">Suedo</label>
+        <label for="floatingInput7" id="sueldo">Sueldo</label>
         <span *ngIf="this.formulario.get('sueldo')?.errors?.['required']"> (El sueldo no puede quedar vacío) </span>
       </div>
       <br />

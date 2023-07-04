@@ -96,7 +96,7 @@
           <td>{{ traspaso.nombre || traspaso.apellido }}</td>
           <td>{{ traspaso.equipo_salida }}</td>
           <td>{{ traspaso.equipo_entrada }}</td>
-          <td>{{ traspaso.fecha | date:'mm-dd-yyyy' }}</td>
+          <td>{{ traspaso.fecha }}</td>
           <td>{{ traspaso.valor | currency : 'CLP' : 'symbol' | separador }}</td>
         </tr>
       </tbody>

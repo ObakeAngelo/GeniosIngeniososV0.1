@@ -26,7 +26,6 @@ export class ModificarEquipoComponent {
       rut: new FormControl(),
       correo: new FormControl(),
       contrasena: new FormControl(),
-      permisos: new FormControl(),
       sueldo: new FormControl(),
       valor_hora_extra: new FormControl(),
       equipo_entrada: new FormControl(),
